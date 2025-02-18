@@ -1,8 +1,47 @@
-# React + Vite
+# RenewBreak
+A web-based timer application that helps computer users take regular eye-rest and stand-up breaks, promoting healthy work intervals.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Demo:** Visit [RenewBreak]()
 
-Currently, two official plugins are available:
+## Features
+- Stand Up Timer with customizable durations (25, 50, 75 minutes)
+- Automatic Break Timer coordination (5, 10, 15 minutes respectively)
+- Eye Rest Timer integration (Off, 20, 30 minutes)
+  - Loops until Stand Up Timer completes
+  - Automatically adjusts if longer than Stand Up Timer duration
+- System notifications work across browser tabs and minimized windows
+- Responsive layout that adapts to different window widths
+- Clean interface with dark theme design
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Usage
+1. Default Setting: 50-min Focus + 10-min Break with 20-min Eye Rest (follows 20-20-20 rule)
+2. Customize Stand Up Timer and Eye Rest Timer settings as needed
+3. Click 'Start' to begin your focus session
+4. Use 'Pause' or 'Reset' to control timers
+5. Receive notifications for:
+   - Eye rest breaks
+   - Stand up breaks
+   - Break completion
+
+## Technologies Used
+- Core Technologies:
+  - React
+  - JavaScript, HTML5, CSS3
+- Features:
+  - Web Workers for timer management
+  - Browser Notifications API
+- Build & Deployment:
+  - Vite build tool
+  - GitHub Pages
+
+## Version
+Current version:  (Released: , 2025)
+
+## Feedback
+Your feedback is valuable! Please share your thoughts via this [feedback form]().
+
+## License
+MIT License
+
+## Author
+Winny Chang
