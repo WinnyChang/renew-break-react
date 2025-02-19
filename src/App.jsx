@@ -15,9 +15,9 @@ function App() {
       <div className="flex">
         <Sidebar>
           <hr className="border-neutral-600 my-3" />
-          <SidebarItem icon={<PiClockCountdown size={24} />} text={t('timers')} to="/" />
-          <SidebarItem icon={<PiListBullets size={24} />} text={t('howToUse')} to="/how-to-use" />
-          <SidebarItem icon={<PiQuestion size={24} />} text={t('whyRest')} to="/why-rest" />
+          <SidebarItem icon={<PiClockCountdown size={24} />} text={t('sidebar.timers')} to="/" />
+          <SidebarItem icon={<PiListBullets size={24} />} text={t('sidebar.howToUse')} to="/how-to-use" />
+          <SidebarItem icon={<PiQuestion size={24} />} text={t('sidebar.whyRest')} to="/why-rest" />
         </Sidebar>
 
         {/* Main Content */}

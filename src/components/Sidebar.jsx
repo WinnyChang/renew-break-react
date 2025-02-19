@@ -45,7 +45,7 @@ export default function Sidebar({ children }) {
                         expanded ? "w-38 ml-3" : "w-0"
                     }`}
                 >
-                    {t('appName')}
+                    {t('sidebar.appName')}
                 </span>
                 <button
                     onClick={() => toggleExpanded()}
@@ -78,10 +78,10 @@ export default function Sidebar({ children }) {
                             expanded ? "w-38 ml-3" : "w-0"
                         }`}
                     >
-                        {isDarkMode ? t('darkMode') : t('lightMode')}
+                        {isDarkMode ? t('sidebar.darkMode') : t('sidebar.lightMode')}
                     </span>
                 </div>
-                {!expanded && <div className={tooltipStyle}>{t('switchMode')}</div>}
+                {!expanded && <div className={tooltipStyle}>{t('sidebar.switchMode')}</div>}
             </li>
             {/* English / Traditional Chinese */}
             <li
@@ -95,10 +95,10 @@ export default function Sidebar({ children }) {
                             expanded ? "w-38 ml-3" : "w-0"
                         }`}
                     >
-                        {t('language')}
+                        {t('sidebar.language')}
                     </span>
                 </div>
-                {!expanded && <div className={tooltipStyle}>{t('switchLanguage')}</div>}
+                {!expanded && <div className={tooltipStyle}>{t('sidebar.switchLanguage')}</div>}
             </li>
         </div>
       </nav>
