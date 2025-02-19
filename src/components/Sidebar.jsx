@@ -10,6 +10,12 @@ const itemStyle = `
   relative flex items-center py-3 px-4 mb-2
   rounded-md cursor-pointer transition-colors group
 `;
+const tooltipStyle = `
+  absolute left-full rounded-md px-2 py-1 ml-6
+  bg-blue-200 text-blue-900 text-base whitespace-nowrap
+  invisible opacity-20 -translate-x-3 transition-all
+  group-hover:visible group-hover:opacity-100 group-hover:translate-x-0
+`;
 
 export default function Sidebar({ children }) {
   const [expanded, setExpanded] = useState(true);
@@ -74,6 +80,7 @@ export default function Sidebar({ children }) {
                         {isDarkMode ? "Dark Mode" : "Light Mode"}
                     </span>
                 </div>
+                {!expanded && <div className={tooltipStyle}>Switch Mode</div>}
             </li>
             {/* English / Traditional Chinese */}
             <li
@@ -90,6 +97,7 @@ export default function Sidebar({ children }) {
                         {isEnglish ? "English" : "繁體中文"}
                     </span>
                 </div>
+                {!expanded && <div className={tooltipStyle}>Switch Language</div>}
             </li>
         </div>
       </nav>
@@ -117,6 +125,7 @@ export function SidebarItem({ icon, text, to }) {
                 >
                 {text}
             </span>
+            {!expanded && <div className={tooltipStyle}>{text}</div>}
         </li>
     </Link>
   );
