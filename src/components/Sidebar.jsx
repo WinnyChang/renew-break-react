@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { LuChevronFirst, LuChevronLast } from "react-icons/lu";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 import { IoLanguage } from "react-icons/io5";
@@ -20,11 +21,11 @@ const tooltipStyle = `
 export default function Sidebar({ children }) {
   const [expanded, setExpanded] = useState(true);
   const [isDarkMode, setIsDarkMode] = useState(true);
-  const [isEnglish, setIsEnglish] = useState(true);
+  const { i18n, t } = useTranslation();
 
   const toggleExpanded = () => setExpanded(!expanded);
   const toggleMode = () => setIsDarkMode(!isDarkMode);
-  const toggleLanguage = () => setIsEnglish(!isEnglish);
+  const toggleLanguage = () => i18n.changeLanguage(i18n.language === 'en' ? 'zh' : 'en');
 
   return (
     <aside className="h-screen">
@@ -40,11 +41,11 @@ export default function Sidebar({ children }) {
                     alt="RenewBreak Logo"
                 />
                 <span
-                    className={`text-neutral-200 text-xl font-bold overflow-hidden transition-all ${
+                    className={`text-neutral-200 text-xl font-bold overflow-hidden transition-all whitespace-nowrap ${
                         expanded ? "w-38 ml-3" : "w-0"
                     }`}
                 >
-                    RenewBreak
+                    {t('appName')}
                 </span>
                 <button
                     onClick={() => toggleExpanded()}
@@ -77,10 +78,10 @@ export default function Sidebar({ children }) {
                             expanded ? "w-38 ml-3" : "w-0"
                         }`}
                     >
-                        {isDarkMode ? "Dark Mode" : "Light Mode"}
+                        {isDarkMode ? t('darkMode') : t('lightMode')}
                     </span>
                 </div>
-                {!expanded && <div className={tooltipStyle}>Switch Mode</div>}
+                {!expanded && <div className={tooltipStyle}>{t('switchMode')}</div>}
             </li>
             {/* English / Traditional Chinese */}
             <li
@@ -94,10 +95,10 @@ export default function Sidebar({ children }) {
                             expanded ? "w-38 ml-3" : "w-0"
                         }`}
                     >
-                        {isEnglish ? "English" : "繁體中文"}
+                        {t('language')}
                     </span>
                 </div>
-                {!expanded && <div className={tooltipStyle}>Switch Language</div>}
+                {!expanded && <div className={tooltipStyle}>{t('switchLanguage')}</div>}
             </li>
         </div>
       </nav>

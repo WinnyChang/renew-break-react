@@ -1,4 +1,5 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { PiClockCountdown, PiListBullets, PiQuestion } from "react-icons/pi";
 import Sidebar, {SidebarItem} from './components/Sidebar';
 import Timers from './pages/Timers';
@@ -7,14 +8,16 @@ import WhyRest from './pages/WhyRest';
 import './App.css'
 
 function App() {
+  const { t } = useTranslation();
+
   return (
     <Router>
       <div className="flex">
         <Sidebar>
           <hr className="border-neutral-600 my-3" />
-          <SidebarItem icon={<PiClockCountdown size={24} />} text="Timers" to="/" />
-          <SidebarItem icon={<PiListBullets size={24} />} text="How to Use" to="/how-to-use" />
-          <SidebarItem icon={<PiQuestion size={24} />} text="Why Rest ?" to="/why-rest" />
+          <SidebarItem icon={<PiClockCountdown size={24} />} text={t('timers')} to="/" />
+          <SidebarItem icon={<PiListBullets size={24} />} text={t('howToUse')} to="/how-to-use" />
+          <SidebarItem icon={<PiQuestion size={24} />} text={t('whyRest')} to="/why-rest" />
         </Sidebar>
 
         {/* Main Content */}
