@@ -36,7 +36,7 @@ export default function Sidebar({ children }) {
                 <img
                     src="/renew-break-logo.svg"
                     className={`h-10 overflow-hidden transition-all ${
-                        expanded ? "w-10" : "w-0"
+                        expanded ? "w-10 ml-2" : "w-0 ml-0"
                     }`}
                     alt="RenewBreak Logo"
                 />

@@ -12,7 +12,7 @@ function App() {
 
   return (
     <Router>
-      <div className="flex">
+      <div className="flex w-full">
         <Sidebar>
           <hr className="border-neutral-600 my-3" />
           <SidebarItem icon={<PiClockCountdown size={24} />} text={t('sidebar.timers')} to="/" />
@@ -21,12 +21,14 @@ function App() {
         </Sidebar>
 
         {/* Main Content */}
-        <main className="flex-grow p-6">
-          <Routes>
-            <Route path="/" element={<Timers />} />
-            <Route path="/how-to-use" element={<HowToUse />} />
-            <Route path="/why-rest" element={<WhyRest />} />
-          </Routes>
+        <main className="flex-grow flex flex-col items-center p-12">
+          <div className="w-full max-w-3xl">
+            <Routes>
+              <Route path="/" element={<Timers />} />
+              <Route path="/how-to-use" element={<HowToUse />} />
+              <Route path="/why-rest" element={<WhyRest />} />
+            </Routes>
+          </div>
         </main>
       </div>
     </Router>
