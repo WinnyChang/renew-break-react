@@ -3,6 +3,7 @@ import { LuChevronFirst, LuChevronLast } from "react-icons/lu";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
 import { IoLanguage } from "react-icons/io5";
 import { useContext, createContext, useState } from "react";
+import { LanguageContext } from '../contexts/LanguageContext';
 import { Link, useLocation } from "react-router-dom";
 
 const SidebarContext = createContext();
@@ -19,13 +20,13 @@ const tooltipStyle = `
 `;
 
 export default function Sidebar({ children }) {
+  const { toggleLanguage } = useContext(LanguageContext);
+  const { t } = useTranslation();
+
   const [expanded, setExpanded] = useState(true);
   const [isDarkMode, setIsDarkMode] = useState(true);
-  const { i18n, t } = useTranslation();
-
   const toggleExpanded = () => setExpanded(!expanded);
   const toggleMode = () => setIsDarkMode(!isDarkMode);
-  const toggleLanguage = () => i18n.changeLanguage(i18n.language === 'en' ? 'zh' : 'en');
 
   return (
     <aside className="h-screen">
