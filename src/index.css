@@ -6,11 +6,80 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: dark light;
-  color: #e0e0e0;
-  background-color: #242424;
-
   -webkit-font-smoothing: antialiased;
+}
+
+* {  
+  transition:
+    background-color 0.5s ease,
+    border-color 0.5s ease;  
+}  
+
+/* dark theme */
+.dark-theme {
+  --background-color: #242424;
+  --color: #e0e0e0;
+
+  --sidebarBg: #282828;
+  --sidebarBorder: #505050;
+  --sidebarActive: #404040;
+  --sidebarHover: #404040;
+  --sidebarTooltipBg: #bfdbfe;
+  --sidebarTooltipColor: #1e3a8a;
+
+  --btnBg: #3d464b;
+  --btnColor: white;
+  --btnHoverBorder: #e0e0e0;
+
+  --feedback: #a1e3f9;
+  --feebackHover: #d1f8ef;
+  --summaryHover: #a1e3f9;
+}
+
+/* light theme */
+.light-theme {
+  --background-color: #f6f6f6;
+  --color: #242424;
+
+  --sidebarBg: #f3f3f3;
+  --sidebarBorder: #c0c0c0;
+  --sidebarActive: #d8d8d8;
+  --sidebarHover: #d8d8d8;
+  --sidebarTooltipBg: #dbeafe;
+  --sidebarTooltipColor: #1e3a8a;
+
+  --btnBg: #d8d8d8;
+  --btnColor: #242424;
+  --btnHoverBorder: #0284c7;
+
+  --feedback: #1d4ed8;
+  --feebackHover: #0284c7;
+  --summaryHover: #1d4ed8;
+}
+
+.main-theme {
+  background-color: var(--background-color);
+  color: var(--color);
+}
+
+/* Sidebar classes */
+.sidebar-theme {
+  background-color: var(--sidebarBg);
+  color: var(--color);
+  border-color: var(--sidebarBorder);
+}
+.sidebar-tooltip {
+  background-color: var(--sidebarTooltipBg);
+  color: var(--sidebarTooltipColor);
+}
+.sidebar-active {
+  background-color: var(--sidebarActive);
+}
+.sidebar-hover:hover {
+  background-color: var(--sidebarHover);
+}
+.sidebar-line {
+  border-color: var(--sidebarBorder);
 }
 
 body {
@@ -58,19 +127,19 @@ summary {
   font-weight: 600;
 }
 summary:hover {
-  color: #a1e3f9;
+  color: var(--summaryHover);
 }
 
 button:hover {
-  border-color: #e0e0e0;
+  border-color: var(--btnHoverBorder);
 }
 button:active {
   transform: scale(0.98);
 }
 .notification-btn, .test-btn {
   width: 220px;
-  background: #3d464b;
-  color: white;
+  background: var(--btnBg);
+  color: var(--btnColor);
   border: solid 1.5px transparent;
   border-radius: 8px;
   font-size: 1.1rem;
@@ -106,11 +175,11 @@ button:active {
 
 .feedback {
   font-weight: 700;
-  color: #a1e3f9;
+  color: var(--feedback);
   text-decoration: inherit;
 }
 .feedback:hover {
-  color: #d1f8ef;
+  color: var(--feebackHover);
 }
 
 /* Sidebar text */
