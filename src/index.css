@@ -31,9 +31,9 @@
   --btnColor: white;
   --btnHoverBorder: #e0e0e0;
 
+  --textHover: #a1e3f9;
   --feedback: #a1e3f9;
   --feebackHover: #d1f8ef;
-  --summaryHover: #a1e3f9;
 }
 
 /* light theme */
@@ -52,9 +52,9 @@
   --btnColor: #242424;
   --btnHoverBorder: #0284c7;
 
+  --textHover: #1d4ed8;
   --feedback: #1d4ed8;
   --feebackHover: #0284c7;
-  --summaryHover: #1d4ed8;
 }
 
 .main-theme {
@@ -94,6 +94,7 @@ h1 {
   letter-spacing: 0.02em;
   line-height: 1.2;
   margin-top: 0;
+  margin-bottom: 1.2em;
   text-align: center;
 }
 h2 {
@@ -127,7 +128,7 @@ summary {
   font-weight: 600;
 }
 summary:hover {
-  color: var(--summaryHover);
+  color: var(--textHover);
 }
 
 button:hover {
@@ -171,6 +172,20 @@ button:active {
 .bullet {
   font-size: 1.25em;
   margin-bottom: 4px;
+}
+
+/* References */
+ol {
+  list-style-type: decimal;
+  font-size: 1.25em;
+}
+ol li {
+  margin-left: 1.75em;
+  margin-bottom: 0.5em;
+}
+ol li:hover {
+  color: var(--textHover);
+  font-weight: 700;
 }
 
 .feedback {
